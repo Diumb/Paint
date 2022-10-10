@@ -4,10 +4,24 @@ const canvas = document.querySelector(".canvas"),
 canvas.width = document.documentElement.clientWidth;
 canvas.height = document.documentElement.clientHeight;
 
-ctx.beginPath();
-ctx.moveTo(0, 0);
-ctx.lineTo(100, 0);
-ctx.lineTo(100, 100);
-ctx.lineTo(0, 100);
-ctx.closePath();
-ctx.stroke();
+// Functions
+
+function onMouseDown() {
+    canvas.addEventListener("mousemove", draw);
+}
+
+function draw(event) {
+    const x = event.pageX,
+          y = event.pageY;
+          
+    ctx.fillRect(x, y, 5, 5);
+}
+
+function onMouseUp() {
+    canvas.removeEventListener("mousemove", draw);
+}
+
+// Events
+
+canvas.addEventListener("mousedown", onMouseDown);
+canvas.addEventListener("mouseup", onMouseUp);
