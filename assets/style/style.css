@@ -1,5 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;500&display=swap');
+
+body {
+    font-family: "Montserrat";
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+}
+
 .wrapper {
-    overflow: hidden;
     width: 100%;
     height: 100vh;
+    background: #404040;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.paint {
+    width: 100%;
+    height: 100vh;
+}
+
+.container {
+    max-width: 1260px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+.paint__container {
+    flex-direction: column;
+}
+
+.canvas {
+    max-width: 1000px;
+    width: 100%;
+    height: 600px;
+    border: 8px solid #303030;
+}
+
+.paint__tools-block {
+    margin-top: 40px;
+}
+
+.paint__tools {
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: start;
+}
+
+.btn {
+    background: #303030;
+    font-size: 18px;
+    padding: 10px;
+    min-width: 200px;
+    color: white;
+    transition: .2s;
+}
+
+.input {
+    background: #303030;
+    font-size: 18px;
+    padding: 10px;
+    min-width: 200px;
+    color: white;
+    transition: .2s;
+}
+
+.input:focus {
+    background: silver;
+    color: black;
+}
+
+.btn:hover {
+    background: #505050;
+}
+
+.btn:active {
+    background: silver;
+    color: black;
 }

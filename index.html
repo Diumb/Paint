@@ -10,8 +10,30 @@
 </head>
 <body>
     <div class="wrapper">
-        <canvas class="canvas"></canvas>
+        <section class="paint flex">
+            <div class="container paint__container flex">
+                <div class="paint__action-block">
+                    <canvas class="canvas" height="600" width="1000"></canvas>
+                </div>
+                <div class="paint__tools-block">
+                    <div class="paint__tools flex">
+                        <button class="btn paint__tool paint__tool--btn" data-tool="square">
+                            Square brush
+                        </button>
+                        <button class="btn paint__tool paint__tool--btn" data-tool="round">
+                            Round brush
+                        </button>
+                        <button class="btn paint__tool paint__tool--btn" data-tool="clear">
+                            Clear
+                        </button>
+                        <input type="text" class="input paint__tool paint__tool--input" placeholder="Color" data-tool="color">
+                        <input type="text" class="input paint__tool paint__tool--input" placeholder="Size" data-tool="size">
+                        <input type="text" class="input paint__tool paint__tool--input" placeholder="Bg color" data-tool="bgColor">
+                    </div>
+                </div>
+            </div>
+        </section>    
     </div>
-<script src="assets/js/index.js"></script>
+<script src="assets/js/index.js" type="module"></script>
 </body>
 </html>
