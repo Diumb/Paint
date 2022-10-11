@@ -42,6 +42,10 @@ function draw(event) {
             ctx.stroke();
             ctx.fill();
             break;
+        
+        case ("clear"):
+            ctx.clearRect(x, y, drawSettings.size, drawSettings.size);
+            break;
     }
 }
 
@@ -63,6 +67,10 @@ function checkButtons(btn) {
         
         case ("round"):
             drawSettings.form = "round";
+            break;
+        
+        case ("clearBrush"):
+            drawSettings.form = "clear";
             break;
         
         case ("clear"):
@@ -92,7 +100,7 @@ function checkInputs(input) {
 // Events
 
 canvas.addEventListener("mousedown", onMouseDown);
-canvas.addEventListener("mouseup", onMouseUp);
+document.addEventListener("mouseup", onMouseUp);
 
 addEventsMethods.addEvents(buttonTools, "click", event => {
     checkButtons(event.currentTarget);
