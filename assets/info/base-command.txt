@@ -1,0 +1,25 @@
+Paint command:
+
+ctx.fillRect(x, y, width, height) - Прямоугольник
+ctx.strokeRect(x, y, width, height) - Прямоугольник обведенный
+ctx.arc(x, y, radius, start, end) - Круг/Дуга
+
+Line command:
+
+ctx.moveTo(x, y) - Начало линии
+ctx.lineTo(x, y) - n-ая точка линии
+
+ctx.beginPath() - Начать новый путь
+ctx.closePath() - Закончить путь
+
+Style command:
+
+ctx.fillStyle - Цвет заливки
+ctx.strokeStyle - Цвет линии
+ctx.lineWidth - Ширина линии
+ctx.lineCap - Форма линии
+
+ctx.rect(x, y, width, height) - Указание к отрисовке
+ctx.fill() - Залить
+ctx.stroke() - Обвести
+ctx.clearRect(x, y, width, height) - Очистить область
