@@ -1,0 +1,30 @@
+git init - Инициализация репозитория
+git add file - Добавление слежки за файлом
+git rm --cached file - Удаление слежки за файлом
+git log - История коммитов
+git log -p - Более подробная история коммитов
+git show hashCommit - Информация о коммите
+git status - Текущий статус репозитория
+git commit -m/-am "Message" - Фиксация изменений
+git restore file - Откат изменений на состояние последнего коммита
+git restore --staged - Откат файла из staged в modifed
+git diff - Информациях об изменениях с момента последнего коммита
+git diff --staged - Информациях об изменениях с момента последнего коммита (Staged)
+git remote add origin link - Подключение удаленного репозитория
+git clone link - Копирование репозитория
+git remote -v - Просмотр удаленных репозиториев
+git push origin branch - Залить изменение на удаленныхй сервер в определенную ветку
+git pull origin branch - Взять изменения из удаленного сервера с определенной ветки
+git branch - Все ветки
+git branch name - Создать ветку
+git branch -d name - Удаление ветки
+git branch -D name - Приоритетное удаление ветки
+git checkout name - Перейти на ветку
+git checkout -b name - Создать и перейти на ветку
+git merge name - Соединить одну ветку с другой
+git rebase name - Соединить одну ветку с другой, но сделав коммиты линейными
+git reset --hard commitHash - Переставить указатель ветки, а также указатель head на определенный коммит
+git checkout commitHash - Переставить указатель head на определенный коммит
+git tag name - Создать тег
+git tag -a name -m "message" - Создать натированный тег
+git tag - Просмотреть все теги
