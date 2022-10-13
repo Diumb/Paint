@@ -8,6 +8,7 @@ Line command:
 
 ctx.moveTo(x, y) - Начало линии
 ctx.lineTo(x, y) - n-ая точка линии
+ctx.quadraticCurveTo(x, y, x, y) - Линия с изгибом
 
 ctx.beginPath() - Начать новый путь
 ctx.closePath() - Закончить путь
