@@ -13,25 +13,59 @@
         <section class="paint flex">
             <div class="container paint__container flex">
                 <div class="paint__action-block">
-                    <canvas class="canvas" height="600" width="1000"></canvas>
+                    <canvas class="canvas" height="670" width="1000"></canvas>
                 </div>
                 <div class="paint__tools-block">
                     <div class="paint__tools flex">
-                        <button class="btn paint__tool paint__tool--btn" data-tool="square">
-                            Square brush
-                        </button>
-                        <button class="btn paint__tool paint__tool--btn" data-tool="round">
-                            Round brush
-                        </button>
-                        <button class="btn paint__tool paint__tool--btn" data-tool="clearBrush">
-                            Clear brush
-                        </button>
-                        <button class="btn paint__tool paint__tool--btn" data-tool="clear">
-                            Clear
-                        </button>
-                        <input type="text" class="input paint__tool paint__tool--input" placeholder="Color" data-tool="color">
-                        <input type="text" class="input paint__tool paint__tool--input" placeholder="Size" data-tool="size">
-                        <input type="text" class="input paint__tool paint__tool--input" placeholder="Bg color" data-tool="bgColor">
+                        <div class="paint__tools-group">
+                            <h3 class="title-mini paint__tools-title">
+                                Brushes
+                            </h3>
+                            <div class="paint__tools-group-buttons flex">
+                                <button class="btn paint__tool paint__tool--btn" data-tool="square">
+                                    Square brush
+                                </button>
+                                <button class="btn paint__tool paint__tool--btn" data-tool="round">
+                                    Round brush
+                                </button>
+                                <button class="btn paint__tool paint__tool--btn" data-tool="clearBrush">
+                                    Clear brush
+                                </button>
+                                <button class="btn paint__tool paint__tool--btn" data-tool="lineBrush">
+                                    Line brush
+                                </button>
+                            </div>
+                        </div>
+                        <div class="paint__tools-group">
+                            <h3 class="title-mini paint__tools-title">
+                                Clear
+                            </h3>
+                            <div class="paint__tools-group-buttons flex">
+                                <button class="btn paint__tool paint__tool--btn" data-tool="clear">
+                                    Clear
+                                </button>
+                            </div>
+                        </div>
+                        <div class="paint__tools-group">
+                            <h3 class="title-mini paint__tools-title">
+                                Line buttons
+                            </h3>
+                            <div class="paint__tools-group-buttons flex">
+                                <button class="btn paint__tool paint__tool--btn" data-tool="newPath">
+                                    New Path
+                                </button>
+                            </div>
+                        </div>
+                        <div class="paint__tools-group">
+                            <h3 class="title-mini paint__tools-title">
+                                Settings
+                            </h3>
+                            <div class="paint__tools-group-buttons flex">
+                                <input type="text" class="input paint__tool paint__tool--input" placeholder="Color" data-tool="color">
+                                <input type="text" class="input paint__tool paint__tool--input" placeholder="Size" data-tool="size">
+                                <input type="text" class="input paint__tool paint__tool--input" placeholder="Bg color" data-tool="bgColor">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

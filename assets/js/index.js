@@ -9,6 +9,8 @@ let drawSettings = {
     color: "white",
     form: "square",
     size: 5,
+    mode: "brush",
+    path: "none",
 }
       
 // Paint Variables
@@ -24,14 +26,24 @@ function onMouseDown() {
 }
 
 function draw(event) {
-    const x = event.pageX - canvas.offsetLeft,
-          y = event.pageY - canvas.offsetTop;
-    
-    ctx.beginPath();
+    if (drawSettings.mode == "brush") {
+        const x = event.pageX - canvas.offsetLeft,
+              y = event.pageY - canvas.offsetTop;
+        
+        ctx.beginPath();
 
-    ctx.fillStyle = drawSettings.color;
-    ctx.strokeStyle = drawSettings.color;
+        ctx.fillStyle = drawSettings.color;
+        ctx.strokeStyle = drawSettings.color;
 
+        checkBrushes(x, y);
+    }
+}
+
+function onMouseUp() {
+    canvas.removeEventListener("mousemove", draw);
+}
+
+function checkBrushes(x, y) {
     switch (drawSettings.form) {
         case ("square"):
             ctx.fillRect(x, y, drawSettings.size, drawSettings.size);
@@ -49,10 +61,6 @@ function draw(event) {
     }
 }
 
-function onMouseUp() {
-    canvas.removeEventListener("mousemove", draw);
-}
-
 function clear() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 }
@@ -63,18 +71,30 @@ function checkButtons(btn) {
     switch (btnData) {
         case ("square"):
             drawSettings.form = "square";
+            drawSettings.mode = "brush";
             break;
         
         case ("round"):
             drawSettings.form = "round";
+            drawSettings.mode = "brush";
             break;
         
         case ("clearBrush"):
             drawSettings.form = "clear";
+            drawSettings.mode = "brush";
             break;
         
         case ("clear"):
             clear();
+            break;
+        
+        case ("lineBrush"):
+            drawSettings.mode = "line";
+            reloadSettings();
+            break;
+        
+        case ("newPath"):
+            drawSettings.path = "start";
             break;
     }
 }
@@ -97,9 +117,36 @@ function checkInputs(input) {
     }
 }
 
+function lineBrush(event) {
+    const x = event.pageX - canvas.offsetLeft,
+          y = event.pageY - canvas.offsetTop;
+          
+    if (drawSettings.mode == "line") {
+        switch (drawSettings.path) {
+            case ("start"):
+                ctx.beginPath();
+                ctx.moveTo(x, y);
+                drawSettings.path = "process";
+                ctx.stroke();
+            break;
+            
+            case ("process"):
+                ctx.lineTo(x, y);
+                ctx.stroke();
+            break;
+        }
+    }
+}
+
+function reloadSettings() {
+    ctx.strokeStyle = drawSettings.color;
+    ctx.lineWidth = drawSettings.size;
+}
+
 // Events
 
 canvas.addEventListener("mousedown", onMouseDown);
+canvas.addEventListener("click", event => lineBrush(event));
 document.addEventListener("mouseup", onMouseUp);
 
 addEventsMethods.addEvents(buttonTools, "click", event => {
